@@ -457,6 +457,9 @@ export class DropdownV4 {
 
 		 
 		this._dd.append(liList);
+		if (this.items.length > 0) {
+			this.focusNextItem();
+		}
 	}
 
 	protected itemSelectedLaunchEvent(item:any):void {
