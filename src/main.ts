@@ -252,6 +252,7 @@ module AutoCompleteNS {
           case 27:
             // ESC
             this._dd.hide();
+            this._$el.blur();
             break;
         }
 
