@@ -264,7 +264,9 @@ module AutoCompleteNS {
       })
 
       this._$el.on('focus', (evt: JQueryEventObject) => {
-        this._$el.val('');
+        if (this._dd.isItemFocused) {
+          this._$el.val('');
+        }
         const newValue = this._$el.val() as string;
         this.handlerTyped(newValue);
       })
