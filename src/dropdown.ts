@@ -52,7 +52,6 @@ export class Dropdown {
 					case 27:
 						// ESC
 						this.hide();
-						this._$el.focus();
 						break;
 					
 				}
@@ -287,7 +286,6 @@ export class DropdownV4 {
 					case 27:
 						// ESC
 						this.hide();
-						this._$el.focus();
 						break;
 					
 				}

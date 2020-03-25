@@ -262,6 +262,11 @@ module AutoCompleteNS {
         this.handlerTyped(newValue);
       })
 
+      this._$el.on('focus', (evt: JQueryEventObject) => {
+        const newValue = this._$el.val() as string;
+        this.handlerTyped(newValue);
+      })
+
       this._$el.on('blur', (evt: JQueryEventObject) => {
         // console.log(evt);
         if (!this._dd.isMouseOver && this._dd.isDdMouseOver && this._dd.isShown()) {
