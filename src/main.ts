@@ -223,8 +223,8 @@ module AutoCompleteNS {
         }
       });
 
-      this._$el.on('keyup', (evt: JQueryEventObject) => {
-        // console.log('keyup', evt.which, evt);
+      this._$el.on('keydown', (evt: JQueryEventObject) => {
+        // console.log('keydown', evt.which, evt);
         // check key
         switch (evt.which) {
           case 16: // shift
@@ -253,12 +253,14 @@ module AutoCompleteNS {
             // ESC
             this._dd.hide();
             break;
-          default:
-            const newValue = this._$el.val() as string;
-            this.handlerTyped(newValue);
         }
 
       });
+
+      this._$el.on('input', (evt: JQueryEventObject) => {
+        const newValue = this._$el.val() as string;
+        this.handlerTyped(newValue);
+      })
 
       this._$el.on('blur', (evt: JQueryEventObject) => {
         // console.log(evt);
@@ -306,10 +308,10 @@ module AutoCompleteNS {
       });
 
       // Paste event
-      // The event occurs before the value is pasted. safe behaviour should be triggering `keyup`
+      // The event occurs before the value is pasted. safe behaviour should be triggering `input`
       this._$el.on('paste', (evt: JQueryEventObject) => {
         setTimeout(() => {
-          this._$el.trigger('keyup', evt);
+          this._$el.trigger('input', evt);
         }, 0)
       });
 

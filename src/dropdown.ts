@@ -46,7 +46,7 @@ export class Dropdown {
 			this.itemSelectedLaunchEvent(item);
 		});
 		
-		this._dd.on('keyup', (evt:JQueryEventObject) => {
+		this._dd.on('keydown', (evt:JQueryEventObject) => {
 			if (this.shown) {
 				switch (evt.which) {
 					case 27:
@@ -281,7 +281,7 @@ export class DropdownV4 {
 			this.itemSelectedLaunchEvent(item);
 		});
 		
-		this._dd.on('keyup', (evt:JQueryEventObject) => {
+		this._dd.on('keydown', (evt:JQueryEventObject) => {
 			if (this.shown) {
 				switch (evt.which) {
 					case 27:
